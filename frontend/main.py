@@ -1,12 +1,9 @@
 import streamlit as st
-import goes_ui as gu
-import nexrad_ui as nu
-import nexrad_map as nm
 import datetime
 import re
 from datetime import date
-from awscloud.s3 import main as s3
-from awscloud.s3 import nexrad_main as nexs3
+from backend.awscloud.s3 import main as s3
+from backend.awscloud.s3 import nexrad_main as nexs3
 from utils.logger import Log
 
 ## Library Imports
@@ -337,9 +334,10 @@ def nexrad_map():
 
 
 page_names_to_funcs = {
-    "GOES Search": goes_ui,
-    "NexRad Search": nexrad_ui,
-    "NexRad Map": nexrad_map,
+    # "GOES Search": goes_ui,
+    # "NexRad Search": nexrad_ui,
+    # "NexRad Map": nexrad_map,
+    # "Login Page": login,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
