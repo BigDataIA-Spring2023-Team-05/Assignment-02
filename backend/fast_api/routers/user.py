@@ -1,7 +1,9 @@
-from fastapi import APIRouter, status, HTTPException, Response
+from fastapi import APIRouter, status, HTTPException, Response, Depends
 from pydantic import BaseModel
 from backend.utils import hashing, JWT_token
 from data import user
+from schemas import User
+from fastapi.security import OAuth2PasswordRequestForm
 import os
 
 router = APIRouter(
@@ -10,9 +12,6 @@ router = APIRouter(
 )
 userDB = user.User()
 
-class User(BaseModel):
-    username: str
-    password: str
 
 
 @router.post('/sign-up', status_code=status.HTTP_201_CREATED)
@@ -31,7 +30,7 @@ def sign_up_user(request: User, response: Response):
 
 
 @router.post('/login', status_code=status.HTTP_200_OK)
-def sign_in_user(request: User, response: Response):
+def sign_in_user(request: OAuth2PasswordRequestForm = Depends()):
     user = userDB.find_username(request.username)
 
     if user == None:
