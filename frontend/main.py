@@ -4,7 +4,7 @@ import re
 from datetime import date
 from backend.awscloud.s3 import main as s3
 from backend.awscloud.s3 import nexrad_main as nexs3
-from utils.logger import Log
+# from utils.logger import Log
 
 ## Library Imports
 import pandas as pd
@@ -35,21 +35,7 @@ station_id = sd['ICAO'].astype(str).to_list()
 
 def goes_ui():
    
-    # # Check if 'key' already exists in session_state
-    # # If not, then initialize it
-    # if 'key' not in st.session_state:
-    #     st.session_state['key'] = 'value'
 
-    # # Session State also supports the attribute based syntax
-    # if 'key' not in st.session_state:
-    #     st.session_state.key = 'value'
-
-    # # Store the initial value of widgets in session state
-    # if "visibility" not in st.session_state:
-    #     st.session_state.visibility = "visible"
-    #     st.session_state.disabled = False
-
-    # st.title('This is a title')
     st.title('Search By _File_ : :blue[GOES] Data')
     st.sidebar.markdown("# :blue[GOES] Search")
     st.subheader("Please select your Search Criteria")
