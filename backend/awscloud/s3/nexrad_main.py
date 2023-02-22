@@ -5,7 +5,7 @@ import boto3.s3
 import botocore
 from dotenv import load_dotenv
 import re
-from data.sql_aws_metadata import Metadata
+# from data.sql_aws_metadata import Metadata
 from awscloud.cloudwatch.logger import write_nexrad_log
 from utils.logger import Log
 from utils import status_checker as status_check
@@ -64,8 +64,8 @@ def get_nexrad_aws_link(year, month, day, station_id, filename):
 
     target_bucket.copy(copy_source, str(year) + '/' + str(month) + '/' + str(day) + '/' + str(station_id) + '/' + str(filename))
 
-    metadata = Metadata()
-    metadata.insert_data_into_nexrad(station_id=station_id, year=year, month=month, day_of_year=day)
+    # metadata = Metadata()
+    # metadata.insert_data_into_nexrad(station_id=station_id, year=year, month=month, day_of_year=day)
 
     generated_link = f'https://damg7245-team-5.s3.amazonaws.com/{year}/{month}/{day}/{station_id}/{filename}'
     source_link = f'https://noaa-nexrad-level2.s3.amazonaws.com/{year}/{month}/{day}/{station_id}/{filename}'

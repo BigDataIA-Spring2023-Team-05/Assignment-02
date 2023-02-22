@@ -5,7 +5,7 @@ import boto3.s3
 import botocore
 import re
 from dotenv import load_dotenv
-from data.sql_aws_metadata import Metadata
+# from data.sql_aws_metadata import Metadata
 from awscloud.cloudwatch.logger import write_goes_log
 from utils.logger import Log
 from utils import status_checker as status_check
@@ -61,8 +61,8 @@ def get_geos_aws_link(station, year, day, hour, filename):
 
     target_bucket.copy(copy_source, station + '/' + str(year) + '/' + day +'/' + hour + '/' + filename)
 
-    metadata = Metadata()
-    metadata.insert_data_into_goes(station=station, year=year, day=day, hour=hour)
+    # metadata = Metadata()
+    # metadata.insert_data_into_goes(station=station, year=year, day=day, hour=hour)
 
     generate_link = f'https://damg7245-team-5.s3.amazonaws.com/{station}/{year}/{day}/{hour}/{filename}'
     source_link = f'https://noaa-goes18.s3.amazonaws.com/{station}/{year}/{day}/{hour}/{filename}'

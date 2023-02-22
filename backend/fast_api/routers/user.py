@@ -1,8 +1,10 @@
 from fastapi import APIRouter, status, HTTPException, Response, Depends
 from pydantic import BaseModel
-from backend.utils import hashing, JWT_token
-from data import user
-from schemas import User
+
+from .. import hashing
+from .. import JWT_token
+from .. data import user
+from .. schemas import User
 from fastapi.security import OAuth2PasswordRequestForm
 import os
 

@@ -1,7 +1,7 @@
 # %%
 import sqlite3 as sql
 import os
-from backend.utils.logger import Log as log
+from utils.logger import Log as log
 from pathlib import Path
 
 # %%
