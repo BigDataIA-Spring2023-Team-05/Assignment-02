@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status, Response, HTTPException
 import uvicorn
-from routers import user, goes
+from fast_api.routers import user, goes
 
 app =  FastAPI()
 
