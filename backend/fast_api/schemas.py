@@ -11,8 +11,15 @@ class User(BaseModel):
 
 
 class GOES(BaseModel):
-    station: str
+    station: str 
     year: str
     day: str
     hour: str
+    file_name:str
+
+class Nexrad(BaseModel):
+    year: str 
+    month: str
+    day: str
+    station_id: str
     file_name:str

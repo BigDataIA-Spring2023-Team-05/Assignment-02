@@ -1,11 +1,12 @@
 from fastapi import FastAPI, status, Response, HTTPException
 import uvicorn
-from fast_api.routers import user, goes
+from fast_api.routers import user, goes, nexrad
 
 app =  FastAPI()
 
 app.include_router(user.router)
 app.include_router(goes.router)
+app.include_router(nexrad.router)
 
 @app.get('/')
 def index():
