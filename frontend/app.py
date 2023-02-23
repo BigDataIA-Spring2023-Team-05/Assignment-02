@@ -29,24 +29,34 @@ session = requests.Session()
 # Insert a form in the container
 with placeholder.form("login"):
     st.markdown("#### Enter your credentials")
-    email = st.text_input("Email")
+    username = st.text_input("UserName")
     password = st.text_input("Password", type="password")
     submit = st.form_submit_button("Login")
 
-if submit and email == actual_email and password == actual_password:
+if submit:
     # If the form is submitted and the email and password are correct,
     # clear the form/container and display a success message
     placeholder.empty()
-    st.success("Login successful")
     url = 'http://127.0.0.1:8000/user/login'
-    myobj = {'username': 'admin','password':'admin' }
-    x = requests.post(url, data = myobj).json()
-    st.write(x)
+    myobj = {'username': username ,'password': password }
+    x_status = requests.post(url, data = myobj).status_code
+    print(x_status)
+    st.write(x_status)
+    if x_status == 200:
+        x = requests.post(url, data = myobj).json()    
+        st.success("Login successful")
+        log_username = x['username']
+        log_token = x['access_token']
+        print(log_username)
+        print(log_token)
+        st.write(x)
+    elif x_status == 404 or x_status == 401:
+        st.error("Login failed ... Invalid credentials")
+    else:
+        pass
     # st.write(requests.post("http://127.0.0.1:8000/user/login").json())
     # data = fetch(session, f"http://127.0.0.1:8000/user/login")
     # print(x)
-elif submit and email != actual_email or password != actual_password:
-    st.error("Login failed")
-else:
-    pass
+
+
 
