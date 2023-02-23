@@ -1,6 +1,6 @@
-## Library Imports
 import pandas as pd
 import numpy as mp
+import requests
 import streamlit as st
 import datetime
 import streamlit as st
@@ -13,28 +13,19 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
 ## 
-# name = ['person1', 'person2']
-# uname = ['pp','cc']
-# psswd = ['123','321']
-# password = stauth.Hasher(psswd).generate()
-# ## Converting above uname,name,passwd list into dictionary formation to use stauth:
-
-# credentials = {"usernames":{}}
-
-# for un, name, pw in zip(uname, name, password):
-#     user_dict = {"name":name,"password":pw}
-#     credentials["usernames"].update({un:user_dict})
-
-
-##
-import streamlit as st
+def fetch(session, url):
+    try:
+        result = session.get(url)
+        return result.json()
+    except Exception:
+        return {}
 
 # Create an empty container
 placeholder = st.empty()
 
-actual_email = "email"
-actual_password = "password"
-
+actual_email = "admin"
+actual_password = "admin"
+session = requests.Session()
 # Insert a form in the container
 with placeholder.form("login"):
     st.markdown("#### Enter your credentials")
@@ -47,11 +38,15 @@ if submit and email == actual_email and password == actual_password:
     # clear the form/container and display a success message
     placeholder.empty()
     st.success("Login successful")
+    url = 'http://127.0.0.1:8000/user/login'
+    myobj = {'username': 'admin','password':'admin' }
+    x = requests.post(url, data = myobj).json()
+    st.write(x)
+    # st.write(requests.post("http://127.0.0.1:8000/user/login").json())
+    # data = fetch(session, f"http://127.0.0.1:8000/user/login")
+    # print(x)
 elif submit and email != actual_email or password != actual_password:
     st.error("Login failed")
 else:
     pass
-
-
-
 
