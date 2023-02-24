@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
-from data import Map_data_table_creation as ck
+# from data import Map_data_table_creation as ck
 
 # st.title('This is a title')
 
@@ -11,11 +11,15 @@ def nexrad_map():
     st.markdown("# NexRad Map")
     st.sidebar.markdown("# NexRad Map")
     ### Call the function to pull Map data : 
-    conn, cursor = ck.map_data_tbl()
+    # conn, cursor = ck.map_data_tbl()
 
-    df = pd.read_sql_query("SELECT * from Mapdata", conn) 
-    data = df
+    # df = pd.read_sql_query("SELECT * from Mapdata", conn) 
+    data = pd.read_fwf('https://www.ncei.noaa.gov/access/homr/file/nexrad-stations.txt')
+    lowercase = lambda x: str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    data = data.drop(index = 0,axis = 0)
     st.subheader("Req data :")
+    df = data 
     st.write(df) 
 
     st.subheader("Graph")
@@ -57,5 +61,10 @@ def nexrad_map():
         )
     # Plot!
     st.plotly_chart(fig, use_container_width=False)
+if "authentication_status" not in st.session_state:
+   st.session_state["authentication_status"] = False
+if st.session_state["authentication_status"] == False:
+      st.subheader("Please Login before use")
+else:
+      nexrad_map()
 
-nexrad_map()
