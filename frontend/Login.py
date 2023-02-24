@@ -1,4 +1,4 @@
-from pages.goes_ui import goes_ui
+from pages.GOES import goes_ui
 import pandas as pd
 import numpy as mp
 import requests
