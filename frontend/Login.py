@@ -31,7 +31,7 @@ if st.session_state["authentication_status"] == False:
         # If the form is submitted and the email and password are correct,
         # clear the form/container and display a success message
         placeholder.empty()
-        url = 'http://127.0.0.1:8000/user/login'
+        url = 'http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/user/login'
         myobj = {'username': username ,'password': password }
         x_status = requests.post(url, data = myobj).status_code
         # print(x_status)
