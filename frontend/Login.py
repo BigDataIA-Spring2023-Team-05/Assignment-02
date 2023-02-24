@@ -1,18 +1,5 @@
-from pages.GOES import goes_ui
-import pandas as pd
-import numpy as mp
 import requests
 import streamlit as st
-import datetime
-import streamlit as st
-from datetime import datetime, timedelta
-from typing import Union
-import streamlit_authenticator as stauth
-from fastapi import Depends, FastAPI, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from jose import JWTError, jwt
-from passlib.context import CryptContext
-from pydantic import BaseModel
 
 
 
@@ -44,7 +31,7 @@ if st.session_state["authentication_status"] == False:
         # If the form is submitted and the email and password are correct,
         # clear the form/container and display a success message
         placeholder.empty()
-        url = 'http://127.0.0.1:8000/user/login'
+        url = 'http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/user/login'
         myobj = {'username': username ,'password': password }
         x_status = requests.post(url, data = myobj).status_code
         # print(x_status)
@@ -61,6 +48,7 @@ if st.session_state["authentication_status"] == False:
         # Initialization of session state:
         
             st.session_state["authentication_status"] = log_token
+            st.success("Login successful") 
             st.write(x)
             # if logout:
             #     st.session_state["authentication_status"] == False
@@ -69,10 +57,10 @@ if st.session_state["authentication_status"] == False:
             # if 'shared' not in st.session_state:
             st.session_state["authentication_status"] == False
             st.error("Login failed ... Invalid credentials")
-        if st.session_state["authentication_status"] == log_token:
-            st.success("Login successful") 
-        else:
-            pass
+        # if st.session_state["authentication_status"] == log_token:
+        #     st.success("Login successful") 
+        # else:
+        #     pass
 else:
     st.header("User logged in Successfully")
     logout = st.button("Log Out")

@@ -1,6 +1,5 @@
 ## Library Imports
 import pandas as pd
-import numpy as mp
 import streamlit as st
 import datetime
 import streamlit as st
@@ -73,7 +72,7 @@ def nexrad_ui():
     token = st.session_state["authentication_status"]
     headers = {'Authorization': f'Bearer {token}'}
     payload = {'stationId':str(station),'day': day_nexrad,'year':year_nexrad,'month':month_nexrad}
-    stcheck = requests.get("http://127.0.0.1:8000/nexrad/files", params = payload, headers=headers)
+    stcheck = requests.get("http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/nexrad/files", params = payload, headers=headers)
     output =  stcheck.json()
     # print(output)
     output_files = output['all_files']
@@ -92,7 +91,7 @@ def nexrad_ui():
         ### API 'POST' CALL
         token = st.session_state["authentication_status"]
         headers = {'Authorization': f'Bearer {token}'}
-        url = 'http://127.0.0.1:8000/nexrad/generate/aws-link'
+        url = 'http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/nexrad/generate/aws-link'
         myobj = {'station_id': str(station) ,'year': year_nexrad ,'day': day_nexrad,'month': month_nexrad,'file_name': str(sl_file)}
         nexrad_status = requests.post(url, json = myobj,headers = headers).status_code
         if nexrad_status == 201:
@@ -128,10 +127,10 @@ def nexrad_ui():
             # file_name = s3.get_aws_link_by_filename(file_input)
             token = st.session_state["authentication_status"]
             headers = {'Authorization': f'Bearer {token}'}
-            result_status = requests.post(f"http://127.0.0.1:8000/nexrad/generate/aws-link-by-filename/{file_input}",headers = headers).status_code
+            result_status = requests.post(f"http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/nexrad/generate/aws-link-by-filename/{file_input}",headers = headers).status_code
             if result_status == 201:
             
-                result = requests.post(f"http://127.0.0.1:8000/nexrad/generate/aws-link-by-filename/{file_input}",headers = headers).json()
+                result = requests.post(f"http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/nexrad/generate/aws-link-by-filename/{file_input}",headers = headers).json()
                 file_name = result['bucket_link']
                 st.write(file_name)
             elif result_status!= 201:

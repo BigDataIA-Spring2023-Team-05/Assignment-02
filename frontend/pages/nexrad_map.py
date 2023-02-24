@@ -1,16 +1,9 @@
 ## Imports
 import pandas as pd
-import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
-import pandas as pd
-import numpy as mp
 import streamlit as st
-import datetime
-import streamlit as st
-from datetime import date
 import requests
-import re
 # from data import Map_data_table_creation as ck
 
 # st.title('This is a title')
@@ -33,7 +26,7 @@ def nexrad_map():
     token = st.session_state["authentication_status"]
     headers = {'Authorization': f'Bearer {token}'}
     # payload = {'stationId':str(station),'day': day_nexrad,'year':year_nexrad,'month':month_nexrad}
-    result = requests.get("http://127.0.0.1:8000/nexrad/map-data", headers=headers).json()
+    result = requests.get("http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/nexrad/map-data", headers=headers).json()
     df = pd.DataFrame(data = result)
     # print(df)
     st.write(df)

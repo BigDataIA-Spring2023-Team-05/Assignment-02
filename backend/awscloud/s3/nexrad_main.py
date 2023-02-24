@@ -35,7 +35,6 @@ target_bucket = s3.Bucket(team_source_bucket)
 
 Log().i('Connected to AWS S3 bucket.')
 
-
 # %%
 def get_all_nexrad_file_name_by_filter(year, month, day, station):
     
