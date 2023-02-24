@@ -8,7 +8,7 @@ app.include_router(user.router)
 app.include_router(goes.router)
 app.include_router(nexrad.router)
 
-@app.get('/')
+@app.get('/status')
 def index():
     return 'Success! APIs are working!'
 

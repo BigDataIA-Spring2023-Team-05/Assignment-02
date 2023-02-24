@@ -46,6 +46,7 @@ def get_all_geos_file_name_by_filter(station, year, day, hour):
         file_name = object_summary.key.split('/')[-1]
         files_available.append(file_name)
 
+    Log().i(str(files_available))
     write_goes_log(f"File fetched: \n{files_available}")
 
     return files_available
