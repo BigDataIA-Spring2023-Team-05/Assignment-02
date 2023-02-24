@@ -4,6 +4,21 @@ import numpy as mp
 import streamlit as st
 import datetime
 import streamlit as st
+from datetime import date
+import requests
+import re
+def day_of_year(month, day):
+        days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        total_days = 0
+        for i in range(month - 1):
+            total_days += days_in_month[i]
+        total_days += day
+        if(len(str(total_days))==1):
+            total_days = '00'+str(total_days)
+        elif(len(str(total_days))==2):
+            total_days = '0'+ str(total_days)
+        return total_days
+hours_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
 
 def goes_ui():
    
@@ -23,48 +38,91 @@ def goes_ui():
 
     # st.title('This is a title')
     st.title('Search By _File_ : :blue[GOES] Data')
+    st.sidebar.markdown("# :blue[GOES] Search")
     st.subheader("Please select your Search Criteria")
     st.markdown("# GOES UI")
-    st.sidebar.markdown("# GOES UI")
 
 
-    ## Data for the dropdown
-    data = [10,20,21,22,15,60]
-    
-    # Create the pandas DataFrame with column name is provided explicitly
-    df = pd.DataFrame(data, columns=['Numbers'])
-    list_df = df['Numbers'].tolist()
-
-    #----------------------------------------------------------
-    # df = pd.read_csv('data.csv')
-    # col_one_list = df['one'].tolist()
-    # selectbox_01 = st.selectbox('Select', col_one_list)
-    #----------------------------------------------------------
-    station = st.selectbox(
-        'Select the required Station',
-        list_df)
-
+    station = 'ABI-L1b-RadC'
     st.write('You selected:', station)
-
     d = st.date_input(
         "Select the date",
-        datetime.date(2022, 7, 6))
+        # value = datetime.date(2022, 7, 28),
+        min_value= datetime.date(2022, 7, 28), max_value=date.today())
     st.write('Your Selection is:', d)
+    day_goes = d.day
+    month_goes = d.month
+    year_goes = d.year
+    # Log().i(day_goes)
+    # Log().i(month_goes)
+    # Log().i(year_goes)
+
+    # print('day' + ':'+ str(day_goes))
+    # print('month' + ':'+ str(month_goes))
+    ## Creating date of the year:
+
+    doy = day_of_year(month_goes,day_goes)
+    # print('day of year' + ':'+ str(doy))
     hour = st.selectbox(
         'Select the required Hour',
-        list_df)
+        hours_list)
 
     st.write('You selected:', hour)
+    # url = 'http://127.0.0.1:8000/goes/files'
+    # myobj = {'username': username ,'password': password }
+    # x = requests.post(url, data = myobj).json()
 
+    ## GET API CALL
+    token = st.session_state["authentication_status"]
+    headers = {'Authorization': f'Bearer {token}'}
+    payload = {'station':'ABI-L1b-RadC','day':str(doy),'year':str(year_goes),'hour':str(hour)}
+    output_files = requests.get("http://127.0.0.1:8000/goes/files", params = payload, headers=headers)
+
+    # print(output_files)
+
+
+
+    if not output_files:
+        st.markdown('**:red[data NOT available for given Inputs]**')
+    else:
+        st.write('')
+    
+    sl_file = st.selectbox('Select the required file for Link',output_files)
+    # Log().i(sl_file)
     ## Button code :
 
-    if st.button('Generate the link'):
-        st.write(' ')
+    # if st.button('Search',key = 'goes_file_output'):
+    #     fo1 = s3.get_all_geos_file_name_by_filter(station, str(year_goes),str(doy), str(hour))
+    #     print(fo1)
+        
+    # sl_file = st.selectbox('Select the required file for Link',fo1)
+    if st.button('Generate Link', key ='goes_filed_search'):
+        ### GOES API POST CALL
+        url = 'http://127.0.0.1:8000/goes/generate/aws-link'
+        myobj = {'station': 'ABI-L1b-RadC' ,'year': str(year_goes) ,'day': str(day_goes),'hour':hour,'file_name': str(sl_file)}
+        goes_status = requests.post(url, data = myobj).status_code
+        if goes_status == 201:
+            x = requests.post(url, data = myobj).json()    
+            st.success("fetched file url")
+            team_link = x['team_link']
+            goes_link = x['goes_link']
+        # team_link, goes_link = s3.get_geos_aws_link(station,str(year_goes),str(doy), str(hour),str(sl_file))
+        st.write('Our Link')
+        st.write(team_link)
+        st.write('GOES Link')
+        st.write(goes_link)
+        # o_df = pd.DataFrame(data = file_output, columns = ['File Name'])
+        # l = []
+        # for f in file_output:
+        #     temp = s3.get_aws_link_by_filename(f)
+        #     l.append(temp)
+        # print(l)
+        # l_df = pd.DataFrame(data = l,columns = ['File Link'])
+        # fdf = o_df.join(l_df)
+        # print(fdf)
+        # st.write(fdf)
     else:
-        st.write('Look at me :::)) ')
-
-
-
+        st.write(' ')
 
     ##############################################################
     st.title('Search By _FileName_ : :blue[GOES] Data')
@@ -72,12 +130,27 @@ def goes_ui():
     # Text input :
 
     file_input = st.text_input('File Name','' )
+    # Log().i(file_input)
 
-
-    if file_input:
-            st.write("File name entered: ", file_input)
+    ## Button code :
+    regex = re.compile(r'(OR)_(ABI)-(L\d+b)-(Rad[A-Z]?)-([A-Z]\dC\d{2})_(G\d+)_(s\d{14})_(e\d{14})_(c\d{14}).nc')
+    match = regex.match(file_input)
+    if st.button('Generate the link',key = 'goes_file_search'):
+        if match:
+            # print("yes checked")
+            # file_name = s3.get_aws_link_by_filename(file_input)
+            file_name = 'www.link.com'
+            # print(file_name)
+            if(file_name == None):
+                st.markdown('**:red[File do not exists in Bucker]**')
+            else:
+                st.write(file_name)
+        else:
+           st.markdown('**:red[Input file not supported]**') 
     else:
-            st.write('')
+        st.write(' ')
+
+
 
 if "authentication_status" not in st.session_state:
    st.session_state["authentication_status"] = False
