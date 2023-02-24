@@ -48,6 +48,7 @@ if st.session_state["authentication_status"] == False:
         # Initialization of session state:
         
             st.session_state["authentication_status"] = log_token
+            st.success("Login successful") 
             st.write(x)
             # if logout:
             #     st.session_state["authentication_status"] == False
@@ -56,10 +57,10 @@ if st.session_state["authentication_status"] == False:
             # if 'shared' not in st.session_state:
             st.session_state["authentication_status"] == False
             st.error("Login failed ... Invalid credentials")
-        if st.session_state["authentication_status"] == log_token:
-            st.success("Login successful") 
-        else:
-            pass
+        # if st.session_state["authentication_status"] == log_token:
+        #     st.success("Login successful") 
+        # else:
+        #     pass
 else:
     st.header("User logged in Successfully")
     logout = st.button("Log Out")

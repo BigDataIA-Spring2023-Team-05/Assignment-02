@@ -167,8 +167,11 @@ class Metadata:
 
 
 # %%
+metadata_instance = Metadata()
+
+
+
 def aws_extract_data_to_sqlite():
-    metadata_instance = Metadata()
 
     now = datetime.now() 
     day_of_year = '{:03d}'.format(now.timetuple().tm_yday)
@@ -223,6 +226,9 @@ def aws_extract_data_to_sqlite():
         
 
     # metadata_instance.print_and_validate_data_nexrad()
+
+
+def populate_database():
 
     conn, cursor = metadata_instance.conn_cursor_function()
     goes_table_name = metadata_instance.get_goes_table_name()

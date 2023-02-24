@@ -5,7 +5,7 @@ from airflow.operators.python import BranchPythonOperator
 # from airflow.utils.dates import days_ago
 # from airflow.models.param import Param
 from datetime import timedelta
-from sql_aws_metadata import aws_extract_data_to_sqlite
+from sql_aws_metadata import aws_extract_data_to_sqlite, populate_database
 from datetime import datetime
 # import pendulum
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
@@ -87,5 +87,10 @@ with DAG("aws_extract_dag", start_date=datetime(2023, 2, 24), schedule_interval=
     task_id='aws_task_powered_by_airflow',
     python_callable=aws_extract_data_to_sqlite
     )
+
+    database_populated = PythonOperator(dag=dag,
+    task_id='database_populate',
+    python_callable=populate_database
+    )
     
-    sleep_process >> aws_to_sql_extraction_process
+    sleep_process >> aws_to_sql_extraction_process >> database_populate
