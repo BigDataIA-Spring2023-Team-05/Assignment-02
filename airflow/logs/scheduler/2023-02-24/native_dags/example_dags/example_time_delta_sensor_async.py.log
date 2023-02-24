@@ -2402,3 +2402,343 @@ sqlite3.OperationalError: unable to open database file
 [2023-02-24 22:27:17,416] {logging_mixin.py:115} INFO - [2023-02-24 22:27:17,362] {dag.py:2371} INFO - Sync 1 DAGs
 [2023-02-24 22:27:17,510] {logging_mixin.py:115} INFO - [2023-02-24 22:27:17,510] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
 [2023-02-24 22:27:17,578] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 3.234 seconds
+[2023-02-24 22:27:48,490] {processor.py:153} INFO - Started process (PID=8499) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:27:48,492] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:27:48,493] {logging_mixin.py:115} INFO - [2023-02-24 22:27:48,493] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:27:48,502] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:27:50,496] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,491] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:27:50,523] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,523] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:27:50,543] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,543] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:27:50,563] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 2.078 seconds
+[2023-02-24 22:28:25,026] {processor.py:153} INFO - Started process (PID=8567) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:28:25,055] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:28:25,100] {logging_mixin.py:115} INFO - [2023-02-24 22:28:25,100] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:28:25,230] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:28:31,492] {logging_mixin.py:115} INFO - [2023-02-24 22:28:31,472] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:28:31,571] {logging_mixin.py:115} INFO - [2023-02-24 22:28:31,570] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:28:31,659] {logging_mixin.py:115} INFO - [2023-02-24 22:28:31,658] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:28:31,734] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 6.779 seconds
+[2023-02-24 22:29:02,627] {processor.py:153} INFO - Started process (PID=8633) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:29:02,631] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:29:02,633] {logging_mixin.py:115} INFO - [2023-02-24 22:29:02,633] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:29:02,667] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:29:03,768] {logging_mixin.py:115} INFO - [2023-02-24 22:29:03,765] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:03,816] {logging_mixin.py:115} INFO - [2023-02-24 22:29:03,815] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:29:03,887] {logging_mixin.py:115} INFO - [2023-02-24 22:29:03,887] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:29:03,909] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 1.296 seconds
+[2023-02-24 22:29:34,372] {processor.py:153} INFO - Started process (PID=8701) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:29:34,374] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:29:34,375] {logging_mixin.py:115} INFO - [2023-02-24 22:29:34,375] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:29:34,383] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:29:38,240] {logging_mixin.py:115} INFO - [2023-02-24 22:29:38,231] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:38,445] {logging_mixin.py:115} INFO - [2023-02-24 22:29:38,444] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:29:38,485] {logging_mixin.py:115} INFO - [2023-02-24 22:29:38,484] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:29:38,502] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 4.135 seconds
+[2023-02-24 22:30:11,245] {processor.py:153} INFO - Started process (PID=8760) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:30:11,251] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:30:11,255] {logging_mixin.py:115} INFO - [2023-02-24 22:30:11,254] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:30:11,303] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:30:14,962] {logging_mixin.py:115} INFO - [2023-02-24 22:30:14,958] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:15,080] {logging_mixin.py:115} INFO - [2023-02-24 22:30:15,078] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:30:15,135] {logging_mixin.py:115} INFO - [2023-02-24 22:30:15,134] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:30:15,154] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 3.934 seconds
+[2023-02-24 22:30:45,750] {processor.py:153} INFO - Started process (PID=8828) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:30:45,752] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:30:45,753] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,753] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:30:45,760] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:30:46,330] {logging_mixin.py:115} INFO - [2023-02-24 22:30:46,328] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:46,367] {logging_mixin.py:115} INFO - [2023-02-24 22:30:46,367] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:30:46,388] {logging_mixin.py:115} INFO - [2023-02-24 22:30:46,388] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:30:46,399] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 0.655 seconds
+[2023-02-24 22:31:20,234] {processor.py:153} INFO - Started process (PID=8896) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:31:20,236] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:31:20,239] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,239] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:31:20,250] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:31:21,996] {logging_mixin.py:115} INFO - [2023-02-24 22:31:21,991] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:22,057] {logging_mixin.py:115} INFO - [2023-02-24 22:31:22,057] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:31:22,104] {logging_mixin.py:115} INFO - [2023-02-24 22:31:22,104] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:31:22,129] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 1.903 seconds
+[2023-02-24 22:31:53,583] {processor.py:153} INFO - Started process (PID=8962) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:31:53,591] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:31:53,600] {logging_mixin.py:115} INFO - [2023-02-24 22:31:53,599] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:31:53,622] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:31:55,144] {logging_mixin.py:115} INFO - [2023-02-24 22:31:55,140] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:55,180] {logging_mixin.py:115} INFO - [2023-02-24 22:31:55,180] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:31:55,248] {logging_mixin.py:115} INFO - [2023-02-24 22:31:55,247] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:31:55,281] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 1.714 seconds
+[2023-02-24 22:32:26,751] {processor.py:153} INFO - Started process (PID=9030) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:32:26,752] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:32:26,754] {logging_mixin.py:115} INFO - [2023-02-24 22:32:26,753] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:32:26,765] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:32:28,873] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,870] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:32:28,899] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,899] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:32:28,929] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,929] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:32:28,944] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 2.198 seconds
+[2023-02-24 22:33:00,004] {processor.py:153} INFO - Started process (PID=9087) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:33:00,007] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:33:00,008] {logging_mixin.py:115} INFO - [2023-02-24 22:33:00,008] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:33:00,019] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:33:02,932] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,929] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:02,958] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,958] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:33:02,978] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,978] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:33:02,987] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 2.991 seconds
+[2023-02-24 22:33:35,034] {processor.py:153} INFO - Started process (PID=9156) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:33:35,037] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:33:35,040] {logging_mixin.py:115} INFO - [2023-02-24 22:33:35,040] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:33:35,050] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:33:38,679] {logging_mixin.py:115} INFO - [2023-02-24 22:33:38,673] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 237, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:38,784] {logging_mixin.py:115} INFO - [2023-02-24 22:33:38,783] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:33:38,841] {logging_mixin.py:115} INFO - [2023-02-24 22:33:38,841] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:33:38,860] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 3.854 seconds
+[2023-02-24 22:34:09,186] {processor.py:153} INFO - Started process (PID=9225) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:34:09,188] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:34:09,189] {logging_mixin.py:115} INFO - [2023-02-24 22:34:09,189] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:34:09,196] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:34:11,464] {logging_mixin.py:115} INFO - [2023-02-24 22:34:11,461] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 169, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 76, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:11,497] {logging_mixin.py:115} INFO - [2023-02-24 22:34:11,496] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:34:11,518] {logging_mixin.py:115} INFO - [2023-02-24 22:34:11,518] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:34:11,540] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 2.359 seconds
+[2023-02-24 22:34:44,567] {processor.py:153} INFO - Started process (PID=9294) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:34:44,570] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:34:44,573] {logging_mixin.py:115} INFO - [2023-02-24 22:34:44,573] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:34:44,590] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:34:47,052] {logging_mixin.py:115} INFO - [2023-02-24 22:34:47,047] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:47,113] {logging_mixin.py:115} INFO - [2023-02-24 22:34:47,112] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:34:47,142] {logging_mixin.py:115} INFO - [2023-02-24 22:34:47,141] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:34:47,158] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 2.599 seconds
+[2023-02-24 22:35:18,195] {processor.py:153} INFO - Started process (PID=9361) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:35:18,197] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:35:18,198] {logging_mixin.py:115} INFO - [2023-02-24 22:35:18,198] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:35:18,208] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:35:19,342] {logging_mixin.py:115} INFO - [2023-02-24 22:35:19,332] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:19,400] {logging_mixin.py:115} INFO - [2023-02-24 22:35:19,400] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:35:19,469] {logging_mixin.py:115} INFO - [2023-02-24 22:35:19,469] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:35:19,494] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 1.307 seconds
+[2023-02-24 22:35:50,018] {processor.py:153} INFO - Started process (PID=9425) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:35:50,020] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:35:50,022] {logging_mixin.py:115} INFO - [2023-02-24 22:35:50,022] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:35:50,030] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:35:53,273] {logging_mixin.py:115} INFO - [2023-02-24 22:35:53,265] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:53,308] {logging_mixin.py:115} INFO - [2023-02-24 22:35:53,307] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:35:53,343] {logging_mixin.py:115} INFO - [2023-02-24 22:35:53,343] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:35:53,358] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 3.354 seconds
+[2023-02-24 22:36:23,604] {processor.py:153} INFO - Started process (PID=9491) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:36:23,607] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:36:23,608] {logging_mixin.py:115} INFO - [2023-02-24 22:36:23,608] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:36:23,618] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:36:26,464] {logging_mixin.py:115} INFO - [2023-02-24 22:36:26,461] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:36:26,493] {logging_mixin.py:115} INFO - [2023-02-24 22:36:26,493] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:36:26,511] {logging_mixin.py:115} INFO - [2023-02-24 22:36:26,511] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:36:26,522] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 2.926 seconds
+[2023-02-24 22:36:57,741] {processor.py:153} INFO - Started process (PID=9559) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:36:57,743] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py for tasks to queue
+[2023-02-24 22:36:57,744] {logging_mixin.py:115} INFO - [2023-02-24 22:36:57,744] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:36:57,754] {processor.py:651} INFO - DAG(s) dict_keys(['example_time_delta_sensor_async']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py
+[2023-02-24 22:37:01,227] {logging_mixin.py:115} INFO - [2023-02-24 22:37:01,223] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:37:01,256] {logging_mixin.py:115} INFO - [2023-02-24 22:37:01,256] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-24 22:37:01,299] {logging_mixin.py:115} INFO - [2023-02-24 22:37:01,299] {dag.py:2919} INFO - Setting next_dagrun for example_time_delta_sensor_async to None, run_after=None
+[2023-02-24 22:37:01,314] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_time_delta_sensor_async.py took 3.578 seconds

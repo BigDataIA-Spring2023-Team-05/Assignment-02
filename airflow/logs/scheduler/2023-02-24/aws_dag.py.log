@@ -2840,3 +2840,343 @@ Traceback (most recent call last):
 sqlite3.OperationalError: unable to open database file
 [2023-02-24 22:27:13,808] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
 [2023-02-24 22:27:13,846] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.450 seconds
+[2023-02-24 22:27:44,327] {processor.py:153} INFO - Started process (PID=8494) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:27:44,329] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:27:44,330] {logging_mixin.py:115} INFO - [2023-02-24 22:27:44,330] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:27:47,366] {logging_mixin.py:115} INFO - [2023-02-24 22:27:47,356] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:27:47,368] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:27:47,411] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.094 seconds
+[2023-02-24 22:28:17,996] {processor.py:153} INFO - Started process (PID=8563) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:28:17,999] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:28:18,002] {logging_mixin.py:115} INFO - [2023-02-24 22:28:18,002] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:28:22,372] {logging_mixin.py:115} INFO - [2023-02-24 22:28:22,303] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:28:22,381] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:28:22,862] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 4.871 seconds
+[2023-02-24 22:28:55,450] {processor.py:153} INFO - Started process (PID=8620) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:28:55,452] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:28:55,453] {logging_mixin.py:115} INFO - [2023-02-24 22:28:55,453] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:28:58,726] {logging_mixin.py:115} INFO - [2023-02-24 22:28:58,720] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:28:58,728] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:28:58,755] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.312 seconds
+[2023-02-24 22:29:28,988] {processor.py:153} INFO - Started process (PID=8686) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:29:28,992] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:29:28,994] {logging_mixin.py:115} INFO - [2023-02-24 22:29:28,994] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:29:32,355] {logging_mixin.py:115} INFO - [2023-02-24 22:29:32,351] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:32,357] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:29:32,385] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.406 seconds
+[2023-02-24 22:30:03,274] {processor.py:153} INFO - Started process (PID=8752) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:30:03,277] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:30:03,284] {logging_mixin.py:115} INFO - [2023-02-24 22:30:03,284] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:30:08,366] {logging_mixin.py:115} INFO - [2023-02-24 22:30:08,323] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:08,371] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:30:08,581] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 5.315 seconds
+[2023-02-24 22:30:39,737] {processor.py:153} INFO - Started process (PID=8820) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:30:39,740] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:30:39,742] {logging_mixin.py:115} INFO - [2023-02-24 22:30:39,742] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:30:42,879] {logging_mixin.py:115} INFO - [2023-02-24 22:30:42,875] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:42,881] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:30:42,913] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.190 seconds
+[2023-02-24 22:31:13,692] {processor.py:153} INFO - Started process (PID=8887) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:31:13,695] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:31:13,696] {logging_mixin.py:115} INFO - [2023-02-24 22:31:13,696] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:31:18,565] {logging_mixin.py:115} INFO - [2023-02-24 22:31:18,499] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:18,570] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:31:18,734] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 5.053 seconds
+[2023-02-24 22:31:49,625] {processor.py:153} INFO - Started process (PID=8947) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:31:49,628] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:31:49,629] {logging_mixin.py:115} INFO - [2023-02-24 22:31:49,629] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:31:52,817] {logging_mixin.py:115} INFO - [2023-02-24 22:31:52,809] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:52,818] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:31:52,853] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.238 seconds
+[2023-02-24 22:32:23,060] {processor.py:153} INFO - Started process (PID=9013) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:32:23,063] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:32:23,064] {logging_mixin.py:115} INFO - [2023-02-24 22:32:23,064] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:32:26,157] {logging_mixin.py:115} INFO - [2023-02-24 22:32:26,143] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:32:26,161] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:32:26,188] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.138 seconds
+[2023-02-24 22:32:56,781] {processor.py:153} INFO - Started process (PID=9081) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:32:56,783] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:32:56,785] {logging_mixin.py:115} INFO - [2023-02-24 22:32:56,785] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:32:59,863] {logging_mixin.py:115} INFO - [2023-02-24 22:32:59,859] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:32:59,865] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:32:59,907] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.136 seconds
+[2023-02-24 22:33:30,693] {processor.py:153} INFO - Started process (PID=9150) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:33:30,697] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:33:30,699] {logging_mixin.py:115} INFO - [2023-02-24 22:33:30,699] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:33:34,493] {logging_mixin.py:115} INFO - [2023-02-24 22:33:34,479] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    # %%
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:34,497] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:33:34,543] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.861 seconds
+[2023-02-24 22:34:05,396] {processor.py:153} INFO - Started process (PID=9216) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:34:05,399] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:34:05,401] {logging_mixin.py:115} INFO - [2023-02-24 22:34:05,401] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:34:08,526] {logging_mixin.py:115} INFO - [2023-02-24 22:34:08,516] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 169, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 76, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:08,531] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:34:08,581] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.197 seconds
+[2023-02-24 22:34:39,145] {processor.py:153} INFO - Started process (PID=9284) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:34:39,148] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:34:39,150] {logging_mixin.py:115} INFO - [2023-02-24 22:34:39,149] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:34:42,878] {logging_mixin.py:115} INFO - [2023-02-24 22:34:42,846] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 239, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 170, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 77, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:42,880] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:34:43,037] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.900 seconds
+[2023-02-24 22:35:13,811] {processor.py:153} INFO - Started process (PID=9352) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:35:13,816] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:35:13,818] {logging_mixin.py:115} INFO - [2023-02-24 22:35:13,818] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:35:17,262] {logging_mixin.py:115} INFO - [2023-02-24 22:35:17,254] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:17,263] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:35:17,326] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.534 seconds
+[2023-02-24 22:35:47,716] {processor.py:153} INFO - Started process (PID=9421) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:35:47,718] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:35:47,719] {logging_mixin.py:115} INFO - [2023-02-24 22:35:47,719] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:35:50,823] {logging_mixin.py:115} INFO - [2023-02-24 22:35:50,818] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:50,825] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:35:50,879] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.171 seconds
+[2023-02-24 22:36:21,469] {processor.py:153} INFO - Started process (PID=9489) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:36:21,478] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:36:21,481] {logging_mixin.py:115} INFO - [2023-02-24 22:36:21,481] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:36:25,022] {logging_mixin.py:115} INFO - [2023-02-24 22:36:25,016] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:36:25,023] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:36:25,046] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 3.586 seconds
+[2023-02-24 22:36:55,344] {processor.py:153} INFO - Started process (PID=9546) to work on /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:36:55,347] {processor.py:641} INFO - Processing file /opt/airflow/dags/aws_dag.py for tasks to queue
+[2023-02-24 22:36:55,349] {logging_mixin.py:115} INFO - [2023-02-24 22:36:55,349] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:36:59,605] {logging_mixin.py:115} INFO - [2023-02-24 22:36:59,600] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/aws_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/aws_dag.py", line 8, in <module>
+    from sql_aws_metadata import aws_extract_data_to_sqlite
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:36:59,607] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/aws_dag.py
+[2023-02-24 22:36:59,659] {processor.py:161} INFO - Processing /opt/airflow/dags/aws_dag.py took 4.328 seconds
