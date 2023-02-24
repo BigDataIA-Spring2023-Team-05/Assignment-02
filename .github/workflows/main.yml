@@ -67,6 +67,7 @@ jobs:
               git reset --hard origin/main
               git pull origin main
               sudo su
+              sudo systemctl start docker
               docker-compose down
               docker-compose build --no-cache
               docker-compose up -d
