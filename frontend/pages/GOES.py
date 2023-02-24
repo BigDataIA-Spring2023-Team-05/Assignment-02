@@ -67,7 +67,7 @@ def goes_ui():
         hours_list)
 
     st.write('You selected:', hour)
-    # url = 'http://127.0.0.1:8000/goes/files'
+    # url = 'http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/goes/files'
     # myobj = {'username': username ,'password': password }
     # x = requests.post(url, data = myobj).json()
 
@@ -75,7 +75,7 @@ def goes_ui():
     token = st.session_state["authentication_status"]
     headers = {'Authorization': f'Bearer {token}'}
     payload = {'station':'ABI-L1b-RadC','day':doy,'year':year_goes,'hour':hour}
-    output = requests.get("http://127.0.0.1:8000/goes/files", params = payload, headers=headers).json()
+    output = requests.get("http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/goes/files", params = payload, headers=headers).json()
     # print(output)
     output_files = output['all_files']
 
@@ -101,7 +101,7 @@ def goes_ui():
         ### GOES API POST CALL
         token = st.session_state["authentication_status"]
         headers = {'Authorization': f'Bearer {token}'}
-        url = 'http://127.0.0.1:8000/goes/generate/aws-link'
+        url = 'http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/goes/generate/aws-link'
         myobj = {'station': 'ABI-L1b-RadC' ,'year': year_goes ,'day': doy,'hour':hour,'file_name': str(sl_file)}
         # print(myobj)
         goes_status = requests.post(url, json= myobj,headers=headers).status_code
@@ -149,10 +149,10 @@ def goes_ui():
             # file_name = s3.get_aws_link_by_filename(file_input)
             token = st.session_state["authentication_status"]
             headers = {'Authorization': f'Bearer {token}'}
-            result_status = requests.post(f"http://127.0.0.1:8000/goes/generate/aws-link-by-filename/{file_input}",headers = headers).status_code
+            result_status = requests.post(f"http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/goes/generate/aws-link-by-filename/{file_input}",headers = headers).status_code
             if result_status == 201:
             
-                result = requests.post(f"http://127.0.0.1:8000/goes/generate/aws-link-by-filename/{file_input}",headers = headers).json()
+                result = requests.post(f"http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/goes/generate/aws-link-by-filename/{file_input}",headers = headers).json()
                 file_name = result['bucket_link']
                 st.write(file_name)
             elif result_status!= 201:

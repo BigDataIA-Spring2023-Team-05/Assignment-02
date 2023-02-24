@@ -5,11 +5,14 @@ services:
     build: ./frontend
     ports:
       - 8501:8501
+    network_mode: bridge
+
 
   backend:
     build: ./backend
     ports:
       - 8000:8000
+    network_mode: bridge
 
 volumes:
   assignemnt-02:
