@@ -1,18 +1,5 @@
-from pages.GOES import goes_ui
-import pandas as pd
-import numpy as mp
 import requests
 import streamlit as st
-import datetime
-import streamlit as st
-from datetime import datetime, timedelta
-from typing import Union
-import streamlit_authenticator as stauth
-from fastapi import Depends, FastAPI, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from jose import JWTError, jwt
-from passlib.context import CryptContext
-from pydantic import BaseModel
 
 
 

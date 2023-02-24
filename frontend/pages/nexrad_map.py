@@ -1,16 +1,9 @@
 ## Imports
 import pandas as pd
-import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
-import pandas as pd
-import numpy as mp
 import streamlit as st
-import datetime
-import streamlit as st
-from datetime import date
 import requests
-import re
 # from data import Map_data_table_creation as ck
 
 # st.title('This is a title')

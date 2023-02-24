@@ -68,7 +68,7 @@ jobs:
               git pull origin main
               sudo su
               sudo systemctl start docker
-              sudo docker-compose down
+              sudo docker-compose down --volumes --rmi all
               sudo docker-compose build --no-cache
               sudo docker-compose up -d
           
