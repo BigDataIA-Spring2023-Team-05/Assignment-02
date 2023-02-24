@@ -135,7 +135,7 @@ def goes_ui():
             file_name = s3.get_aws_link_by_filename(file_input)
             # print(file_name)
             if(file_name == None):
-                st.markdown('**:red[File do not exists in Bucker]**')
+                st.markdown('**:red[File do not exists in Bucket]**')
             else:
                 st.write(file_name)
         else:
