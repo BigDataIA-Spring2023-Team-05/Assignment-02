@@ -2553,3 +2553,360 @@ sqlite3.OperationalError: unable to open database file
 [2023-02-24 22:27:19,997] {logging_mixin.py:115} INFO - [2023-02-24 22:27:19,997] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
 [2023-02-24 22:27:19,998] {logging_mixin.py:115} INFO - [2023-02-24 22:27:19,998] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
 [2023-02-24 22:27:20,008] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.252 seconds
+[2023-02-24 22:27:51,186] {processor.py:153} INFO - Started process (PID=8517) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:27:51,187] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:27:51,188] {logging_mixin.py:115} INFO - [2023-02-24 22:27:51,188] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:27:51,193] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:27:52,436] {logging_mixin.py:115} INFO - [2023-02-24 22:27:52,433] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:27:52,468] {logging_mixin.py:115} INFO - [2023-02-24 22:27:52,468] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:27:52,495] {logging_mixin.py:115} INFO - [2023-02-24 22:27:52,495] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:27:52,496] {logging_mixin.py:115} INFO - [2023-02-24 22:27:52,496] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:27:52,518] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.336 seconds
+[2023-02-24 22:28:34,085] {processor.py:153} INFO - Started process (PID=8584) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:28:34,092] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:28:34,098] {logging_mixin.py:115} INFO - [2023-02-24 22:28:34,098] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:28:34,122] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:28:37,004] {logging_mixin.py:115} INFO - [2023-02-24 22:28:36,984] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:28:37,162] {logging_mixin.py:115} INFO - [2023-02-24 22:28:37,161] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:28:37,235] {logging_mixin.py:115} INFO - [2023-02-24 22:28:37,235] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:28:37,238] {logging_mixin.py:115} INFO - [2023-02-24 22:28:37,237] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:28:37,259] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 3.208 seconds
+[2023-02-24 22:29:07,806] {processor.py:153} INFO - Started process (PID=8648) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:29:07,809] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:29:07,812] {logging_mixin.py:115} INFO - [2023-02-24 22:29:07,811] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:29:07,828] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:29:10,158] {logging_mixin.py:115} INFO - [2023-02-24 22:29:10,154] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:10,242] {logging_mixin.py:115} INFO - [2023-02-24 22:29:10,241] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:29:10,350] {logging_mixin.py:115} INFO - [2023-02-24 22:29:10,350] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:29:10,352] {logging_mixin.py:115} INFO - [2023-02-24 22:29:10,352] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:29:10,396] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 2.602 seconds
+[2023-02-24 22:29:40,763] {processor.py:153} INFO - Started process (PID=8719) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:29:40,765] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:29:40,766] {logging_mixin.py:115} INFO - [2023-02-24 22:29:40,766] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:29:40,771] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:29:42,767] {logging_mixin.py:115} INFO - [2023-02-24 22:29:42,764] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:42,814] {logging_mixin.py:115} INFO - [2023-02-24 22:29:42,814] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:29:42,843] {logging_mixin.py:115} INFO - [2023-02-24 22:29:42,843] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:29:42,845] {logging_mixin.py:115} INFO - [2023-02-24 22:29:42,845] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:29:42,863] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 2.104 seconds
+[2023-02-24 22:30:17,942] {processor.py:153} INFO - Started process (PID=8791) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:30:17,944] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:30:17,945] {logging_mixin.py:115} INFO - [2023-02-24 22:30:17,945] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:30:17,951] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:30:19,165] {logging_mixin.py:115} INFO - [2023-02-24 22:30:19,158] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:19,211] {logging_mixin.py:115} INFO - [2023-02-24 22:30:19,211] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:30:19,265] {logging_mixin.py:115} INFO - [2023-02-24 22:30:19,265] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:30:19,266] {logging_mixin.py:115} INFO - [2023-02-24 22:30:19,266] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:30:19,282] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.345 seconds
+[2023-02-24 22:30:49,844] {processor.py:153} INFO - Started process (PID=8854) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:30:49,846] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:30:49,847] {logging_mixin.py:115} INFO - [2023-02-24 22:30:49,847] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:30:49,852] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:30:50,751] {logging_mixin.py:115} INFO - [2023-02-24 22:30:50,748] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:50,777] {logging_mixin.py:115} INFO - [2023-02-24 22:30:50,776] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:30:50,823] {logging_mixin.py:115} INFO - [2023-02-24 22:30:50,823] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:30:50,826] {logging_mixin.py:115} INFO - [2023-02-24 22:30:50,825] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:30:50,845] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.004 seconds
+[2023-02-24 22:31:23,798] {processor.py:153} INFO - Started process (PID=8921) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:31:23,800] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:31:23,801] {logging_mixin.py:115} INFO - [2023-02-24 22:31:23,801] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:31:23,807] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:31:24,828] {logging_mixin.py:115} INFO - [2023-02-24 22:31:24,823] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:24,859] {logging_mixin.py:115} INFO - [2023-02-24 22:31:24,859] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:31:24,886] {logging_mixin.py:115} INFO - [2023-02-24 22:31:24,886] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:31:24,887] {logging_mixin.py:115} INFO - [2023-02-24 22:31:24,887] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:31:24,900] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.107 seconds
+[2023-02-24 22:31:57,306] {processor.py:153} INFO - Started process (PID=8984) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:31:57,307] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:31:57,308] {logging_mixin.py:115} INFO - [2023-02-24 22:31:57,308] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:31:57,313] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:31:58,254] {logging_mixin.py:115} INFO - [2023-02-24 22:31:58,250] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:58,284] {logging_mixin.py:115} INFO - [2023-02-24 22:31:58,284] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:31:58,304] {logging_mixin.py:115} INFO - [2023-02-24 22:31:58,304] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:31:58,305] {logging_mixin.py:115} INFO - [2023-02-24 22:31:58,305] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:31:58,316] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.015 seconds
+[2023-02-24 22:32:30,701] {processor.py:153} INFO - Started process (PID=9049) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:32:30,703] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:32:30,705] {logging_mixin.py:115} INFO - [2023-02-24 22:32:30,705] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:32:30,712] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:32:32,933] {logging_mixin.py:115} INFO - [2023-02-24 22:32:32,927] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:32:32,959] {logging_mixin.py:115} INFO - [2023-02-24 22:32:32,958] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:32:32,977] {logging_mixin.py:115} INFO - [2023-02-24 22:32:32,977] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:32:32,978] {logging_mixin.py:115} INFO - [2023-02-24 22:32:32,978] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:32:32,988] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 2.293 seconds
+[2023-02-24 22:33:03,852] {processor.py:153} INFO - Started process (PID=9115) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:33:03,854] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:33:03,854] {logging_mixin.py:115} INFO - [2023-02-24 22:33:03,854] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:33:03,859] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:33:04,617] {logging_mixin.py:115} INFO - [2023-02-24 22:33:04,614] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:04,642] {logging_mixin.py:115} INFO - [2023-02-24 22:33:04,641] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:33:04,669] {logging_mixin.py:115} INFO - [2023-02-24 22:33:04,669] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:33:04,672] {logging_mixin.py:115} INFO - [2023-02-24 22:33:04,672] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:33:04,687] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 0.838 seconds
+[2023-02-24 22:33:40,141] {processor.py:153} INFO - Started process (PID=9184) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:33:40,143] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:33:40,144] {logging_mixin.py:115} INFO - [2023-02-24 22:33:40,144] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:33:40,150] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:33:41,442] {logging_mixin.py:115} INFO - [2023-02-24 22:33:41,439] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 237, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:41,471] {logging_mixin.py:115} INFO - [2023-02-24 22:33:41,470] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:33:41,508] {logging_mixin.py:115} INFO - [2023-02-24 22:33:41,508] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:33:41,509] {logging_mixin.py:115} INFO - [2023-02-24 22:33:41,509] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:33:41,523] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.386 seconds
+[2023-02-24 22:34:11,983] {processor.py:153} INFO - Started process (PID=9251) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:34:11,984] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:34:11,985] {logging_mixin.py:115} INFO - [2023-02-24 22:34:11,985] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:34:11,991] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:34:13,433] {logging_mixin.py:115} INFO - [2023-02-24 22:34:13,423] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 169, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 76, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:13,501] {logging_mixin.py:115} INFO - [2023-02-24 22:34:13,500] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:34:13,523] {logging_mixin.py:115} INFO - [2023-02-24 22:34:13,523] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:34:13,524] {logging_mixin.py:115} INFO - [2023-02-24 22:34:13,524] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:34:13,560] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.581 seconds
+[2023-02-24 22:34:48,186] {processor.py:153} INFO - Started process (PID=9316) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:34:48,189] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:34:48,190] {logging_mixin.py:115} INFO - [2023-02-24 22:34:48,190] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:34:48,197] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:34:49,207] {logging_mixin.py:115} INFO - [2023-02-24 22:34:49,204] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:49,234] {logging_mixin.py:115} INFO - [2023-02-24 22:34:49,234] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:34:49,253] {logging_mixin.py:115} INFO - [2023-02-24 22:34:49,253] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:34:49,254] {logging_mixin.py:115} INFO - [2023-02-24 22:34:49,254] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:34:49,265] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.085 seconds
+[2023-02-24 22:35:22,395] {processor.py:153} INFO - Started process (PID=9384) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:35:22,396] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:35:22,398] {logging_mixin.py:115} INFO - [2023-02-24 22:35:22,398] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:35:22,405] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:35:23,450] {logging_mixin.py:115} INFO - [2023-02-24 22:35:23,447] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:23,478] {logging_mixin.py:115} INFO - [2023-02-24 22:35:23,478] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:35:23,497] {logging_mixin.py:115} INFO - [2023-02-24 22:35:23,497] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:35:23,498] {logging_mixin.py:115} INFO - [2023-02-24 22:35:23,498] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:35:23,507] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.118 seconds
+[2023-02-24 22:35:54,818] {processor.py:153} INFO - Started process (PID=9441) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:35:54,820] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:35:54,822] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,822] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:35:54,829] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:35:55,864] {logging_mixin.py:115} INFO - [2023-02-24 22:35:55,860] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:55,915] {logging_mixin.py:115} INFO - [2023-02-24 22:35:55,915] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:35:55,938] {logging_mixin.py:115} INFO - [2023-02-24 22:35:55,938] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:35:55,941] {logging_mixin.py:115} INFO - [2023-02-24 22:35:55,941] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:35:55,953] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.140 seconds
+[2023-02-24 22:36:28,102] {processor.py:153} INFO - Started process (PID=9507) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:36:28,104] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:36:28,105] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,105] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:36:28,111] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:36:29,010] {logging_mixin.py:115} INFO - [2023-02-24 22:36:29,007] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:36:29,029] {logging_mixin.py:115} INFO - [2023-02-24 22:36:29,028] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:36:29,049] {logging_mixin.py:115} INFO - [2023-02-24 22:36:29,049] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:36:29,050] {logging_mixin.py:115} INFO - [2023-02-24 22:36:29,050] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:36:29,063] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 0.965 seconds
+[2023-02-24 22:37:03,125] {processor.py:153} INFO - Started process (PID=9575) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:37:03,128] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2023-02-24 22:37:03,130] {logging_mixin.py:115} INFO - [2023-02-24 22:37:03,130] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:37:03,147] {processor.py:651} INFO - DAG(s) dict_keys(['example_external_task_marker_parent', 'example_external_task_marker_child']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2023-02-24 22:37:04,770] {logging_mixin.py:115} INFO - [2023-02-24 22:37:04,762] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:37:04,820] {logging_mixin.py:115} INFO - [2023-02-24 22:37:04,820] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:37:04,848] {logging_mixin.py:115} INFO - [2023-02-24 22:37:04,848] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2023-02-24 22:37:04,850] {logging_mixin.py:115} INFO - [2023-02-24 22:37:04,850] {dag.py:2919} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2023-02-24 22:37:04,872] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 1.758 seconds

@@ -3250,3 +3250,428 @@ sqlite3.OperationalError: unable to open database file
 [2023-02-24 22:27:17,336] {logging_mixin.py:115} INFO - [2023-02-24 22:27:17,335] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
 [2023-02-24 22:27:17,337] {logging_mixin.py:115} INFO - [2023-02-24 22:27:17,337] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
 [2023-02-24 22:27:17,354] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 4.305 seconds
+[2023-02-24 22:27:48,490] {processor.py:153} INFO - Started process (PID=8498) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:27:48,492] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:27:48,493] {logging_mixin.py:115} INFO - [2023-02-24 22:27:48,493] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:27:48,532] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:27:50,496] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,491] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:27:50,524] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,524] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:27:50,543] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,543] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:27:50,546] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,546] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:27:50,547] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,547] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:27:50,558] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,558] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:27:50,565] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,565] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:27:50,566] {logging_mixin.py:115} INFO - [2023-02-24 22:27:50,566] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:27:50,574] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 2.091 seconds
+[2023-02-24 22:28:21,067] {processor.py:153} INFO - Started process (PID=8565) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:28:21,070] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:28:21,072] {logging_mixin.py:115} INFO - [2023-02-24 22:28:21,072] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:28:21,188] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:28:27,535] {logging_mixin.py:115} INFO - [2023-02-24 22:28:27,389] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:28:27,934] {logging_mixin.py:115} INFO - [2023-02-24 22:28:27,929] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:28:28,097] {logging_mixin.py:115} INFO - [2023-02-24 22:28:28,097] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:28:28,103] {logging_mixin.py:115} INFO - [2023-02-24 22:28:28,102] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:28:28,106] {logging_mixin.py:115} INFO - [2023-02-24 22:28:28,105] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:28:28,200] {logging_mixin.py:115} INFO - [2023-02-24 22:28:28,200] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:28:28,272] {logging_mixin.py:115} INFO - [2023-02-24 22:28:28,272] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:28:28,281] {logging_mixin.py:115} INFO - [2023-02-24 22:28:28,281] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:28:28,346] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 7.291 seconds
+[2023-02-24 22:28:59,896] {processor.py:153} INFO - Started process (PID=8631) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:28:59,899] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:28:59,901] {logging_mixin.py:115} INFO - [2023-02-24 22:28:59,901] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:29:00,080] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:29:01,304] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,300] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:01,334] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,334] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:29:01,389] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,388] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:29:01,394] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,394] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:29:01,396] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,396] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:29:01,407] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,406] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:29:01,427] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,426] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:29:01,432] {logging_mixin.py:115} INFO - [2023-02-24 22:29:01,430] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:29:01,454] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 1.568 seconds
+[2023-02-24 22:29:32,059] {processor.py:153} INFO - Started process (PID=8688) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:29:32,062] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:29:32,064] {logging_mixin.py:115} INFO - [2023-02-24 22:29:32,064] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:29:32,153] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:29:36,277] {logging_mixin.py:115} INFO - [2023-02-24 22:29:36,188] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:29:36,583] {logging_mixin.py:115} INFO - [2023-02-24 22:29:36,582] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:29:36,891] {logging_mixin.py:115} INFO - [2023-02-24 22:29:36,880] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:29:36,908] {logging_mixin.py:115} INFO - [2023-02-24 22:29:36,907] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:29:36,914] {logging_mixin.py:115} INFO - [2023-02-24 22:29:36,914] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:29:37,080] {logging_mixin.py:115} INFO - [2023-02-24 22:29:37,080] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:29:37,181] {logging_mixin.py:115} INFO - [2023-02-24 22:29:37,153] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:29:37,185] {logging_mixin.py:115} INFO - [2023-02-24 22:29:37,185] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:29:37,301] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 5.259 seconds
+[2023-02-24 22:30:08,171] {processor.py:153} INFO - Started process (PID=8756) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:30:08,178] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:30:08,186] {logging_mixin.py:115} INFO - [2023-02-24 22:30:08,185] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:30:08,469] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:30:12,295] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,271] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:12,541] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,540] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:30:12,759] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,758] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:30:12,762] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,762] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:30:12,773] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,772] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:30:12,903] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,902] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:30:12,973] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,972] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:30:12,985] {logging_mixin.py:115} INFO - [2023-02-24 22:30:12,985] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:30:13,252] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 5.119 seconds
+[2023-02-24 22:30:44,754] {processor.py:153} INFO - Started process (PID=8824) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:30:44,756] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:30:44,758] {logging_mixin.py:115} INFO - [2023-02-24 22:30:44,757] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:30:44,810] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:30:45,617] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,614] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:30:45,641] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,641] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:30:45,659] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,659] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:30:45,660] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,660] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:30:45,661] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,661] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:30:45,666] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,666] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:30:45,670] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,670] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:30:45,671] {logging_mixin.py:115} INFO - [2023-02-24 22:30:45,671] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:30:45,677] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 0.932 seconds
+[2023-02-24 22:31:16,120] {processor.py:153} INFO - Started process (PID=8892) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:31:16,124] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:31:16,126] {logging_mixin.py:115} INFO - [2023-02-24 22:31:16,126] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:31:16,197] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:31:20,249] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,246] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:20,297] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,297] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:31:20,328] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,328] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:31:20,330] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,330] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:31:20,332] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,332] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:31:20,344] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,344] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:31:20,353] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,353] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:31:20,359] {logging_mixin.py:115} INFO - [2023-02-24 22:31:20,359] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:31:20,383] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 4.273 seconds
+[2023-02-24 22:31:50,636] {processor.py:153} INFO - Started process (PID=8949) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:31:50,638] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:31:50,640] {logging_mixin.py:115} INFO - [2023-02-24 22:31:50,640] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:31:50,715] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:31:54,161] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,155] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:31:54,244] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,243] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:31:54,325] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,325] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:31:54,327] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,327] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:31:54,331] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,331] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:31:54,347] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,347] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:31:54,360] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,360] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:31:54,361] {logging_mixin.py:115} INFO - [2023-02-24 22:31:54,361] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:31:54,392] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.763 seconds
+[2023-02-24 22:32:25,340] {processor.py:153} INFO - Started process (PID=9017) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:32:25,343] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:32:25,344] {logging_mixin.py:115} INFO - [2023-02-24 22:32:25,344] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:32:25,393] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:32:28,657] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,644] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:32:28,695] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,695] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:32:28,739] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,738] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:32:28,741] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,741] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:32:28,742] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,742] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:32:28,750] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,750] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:32:28,755] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,755] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:32:28,757] {logging_mixin.py:115} INFO - [2023-02-24 22:32:28,757] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:32:28,773] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.442 seconds
+[2023-02-24 22:32:59,005] {processor.py:153} INFO - Started process (PID=9085) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:32:59,008] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:32:59,010] {logging_mixin.py:115} INFO - [2023-02-24 22:32:59,010] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:32:59,102] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:33:02,430] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,425] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:02,460] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,460] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:33:02,494] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,494] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:33:02,495] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,495] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:33:02,496] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,496] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:33:02,505] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,505] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:33:02,511] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,511] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:33:02,511] {logging_mixin.py:115} INFO - [2023-02-24 22:33:02,511] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:33:02,521] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.528 seconds
+[2023-02-24 22:33:32,782] {processor.py:153} INFO - Started process (PID=9152) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:33:32,784] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:33:32,787] {logging_mixin.py:115} INFO - [2023-02-24 22:33:32,787] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:33:32,879] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:33:36,161] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,155] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    # %%
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 168, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 75, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:33:36,214] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,213] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:33:36,266] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,266] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:33:36,268] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,268] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:33:36,269] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,269] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:33:36,277] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,277] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:33:36,283] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,283] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:33:36,284] {logging_mixin.py:115} INFO - [2023-02-24 22:33:36,284] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:33:36,293] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.522 seconds
+[2023-02-24 22:34:06,652] {processor.py:153} INFO - Started process (PID=9220) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:34:06,655] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:34:06,657] {logging_mixin.py:115} INFO - [2023-02-24 22:34:06,657] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:34:06,750] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:34:09,883] {logging_mixin.py:115} INFO - [2023-02-24 22:34:09,878] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 238, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 169, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 76, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:09,948] {logging_mixin.py:115} INFO - [2023-02-24 22:34:09,948] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:34:10,011] {logging_mixin.py:115} INFO - [2023-02-24 22:34:10,010] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:34:10,014] {logging_mixin.py:115} INFO - [2023-02-24 22:34:10,013] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:34:10,016] {logging_mixin.py:115} INFO - [2023-02-24 22:34:10,016] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:34:10,025] {logging_mixin.py:115} INFO - [2023-02-24 22:34:10,025] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:34:10,030] {logging_mixin.py:115} INFO - [2023-02-24 22:34:10,030] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:34:10,031] {logging_mixin.py:115} INFO - [2023-02-24 22:34:10,030] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:34:10,038] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.396 seconds
+[2023-02-24 22:34:40,610] {processor.py:153} INFO - Started process (PID=9289) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:34:40,612] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:34:40,614] {logging_mixin.py:115} INFO - [2023-02-24 22:34:40,614] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:34:40,794] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:34:45,711] {logging_mixin.py:115} INFO - [2023-02-24 22:34:45,675] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 239, in <module>
+    # %%
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 170, in aws_extract_data_to_sqlite
+    def aws_extract_data_to_sqlite():
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 77, in __init__
+    # creating the database
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:34:45,924] {logging_mixin.py:115} INFO - [2023-02-24 22:34:45,921] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:34:45,986] {logging_mixin.py:115} INFO - [2023-02-24 22:34:45,985] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:34:45,987] {logging_mixin.py:115} INFO - [2023-02-24 22:34:45,987] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:34:45,988] {logging_mixin.py:115} INFO - [2023-02-24 22:34:45,988] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:34:46,008] {logging_mixin.py:115} INFO - [2023-02-24 22:34:46,007] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:34:46,030] {logging_mixin.py:115} INFO - [2023-02-24 22:34:46,030] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:34:46,033] {logging_mixin.py:115} INFO - [2023-02-24 22:34:46,033] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:34:46,064] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 5.461 seconds
+[2023-02-24 22:35:17,284] {processor.py:153} INFO - Started process (PID=9357) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:35:17,288] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:35:17,293] {logging_mixin.py:115} INFO - [2023-02-24 22:35:17,293] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:35:17,366] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:35:20,213] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,209] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:20,421] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,420] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:35:20,570] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,570] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:35:20,574] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,573] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:35:20,578] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,578] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:35:20,619] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,619] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:35:20,641] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,640] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:35:20,643] {logging_mixin.py:115} INFO - [2023-02-24 22:35:20,643] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:35:20,665] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.398 seconds
+[2023-02-24 22:35:51,031] {processor.py:153} INFO - Started process (PID=9427) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:35:51,033] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:35:51,035] {logging_mixin.py:115} INFO - [2023-02-24 22:35:51,035] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:35:51,099] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:35:53,988] {logging_mixin.py:115} INFO - [2023-02-24 22:35:53,986] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:35:54,011] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,011] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:35:54,034] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,033] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:35:54,035] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,035] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:35:54,036] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,036] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:35:54,043] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,043] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:35:54,049] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,049] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:35:54,050] {logging_mixin.py:115} INFO - [2023-02-24 22:35:54,050] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:35:54,059] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 3.041 seconds
+[2023-02-24 22:36:25,145] {processor.py:153} INFO - Started process (PID=9493) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:36:25,147] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:36:25,148] {logging_mixin.py:115} INFO - [2023-02-24 22:36:25,148] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:36:25,185] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:36:28,027] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,025] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:36:28,054] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,053] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:36:28,081] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,080] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:36:28,082] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,082] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:36:28,084] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,084] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:36:28,091] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,091] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:36:28,096] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,096] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:36:28,097] {logging_mixin.py:115} INFO - [2023-02-24 22:36:28,097] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:36:28,104] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 2.964 seconds
+[2023-02-24 22:37:00,646] {processor.py:153} INFO - Started process (PID=9565) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:37:00,649] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2023-02-24 22:37:00,651] {logging_mixin.py:115} INFO - [2023-02-24 22:37:00,651] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:37:00,700] {processor.py:651} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py
+[2023-02-24 22:37:02,435] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,433] {plugins_manager.py:264} ERROR - Failed to import plugin /opt/airflow/plugins/sql_aws_metadata.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/plugins_manager.py", line 256, in load_plugins_from_plugin_directory
+    loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 240, in <module>
+    aws_extract_data_to_sqlite()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 171, in aws_extract_data_to_sqlite
+    metadata_instance = Metadata()
+  File "/opt/airflow/plugins/sql_aws_metadata.py", line 78, in __init__
+    self.conn = sql.connect(self.database_name)
+sqlite3.OperationalError: unable to open database file
+[2023-02-24 22:37:02,477] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,477] {dag.py:2371} INFO - Sync 3 DAGs
+[2023-02-24 22:37:02,501] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,501] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator to 2023-02-22T00:00:00+00:00, run_after=2023-02-22T00:00:00+00:00
+[2023-02-24 22:37:02,502] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,502] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:37:02,504] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,503] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:37:02,512] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,512] {dag.py:2371} INFO - Sync 2 DAGs
+[2023-02-24 22:37:02,518] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,518] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None, run_after=None
+[2023-02-24 22:37:02,520] {logging_mixin.py:115} INFO - [2023-02-24 22:37:02,520] {dag.py:2919} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None, run_after=None
+[2023-02-24 22:37:02,528] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_subdag_operator.py took 1.888 seconds

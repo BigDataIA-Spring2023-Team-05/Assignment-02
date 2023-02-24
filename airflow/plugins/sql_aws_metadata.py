@@ -35,7 +35,7 @@ def get_all_nexrad_file_name_by_filter_new(year, month, date):
     month = '{:02d}'.format(int(month))
     date = '{:02d}'.format(int(date))
 
-    for object_summary in src_bucket_goes.objects.filter(Prefix=f'{year}/{month}/{date}/'): #/{month}/{day}/{station}
+    for object_summary in src_bucket_noaa.objects.filter(Prefix=f'{year}/{month}/{date}/'): #/{month}/{day}/{station}
         files_available.append(object_summary.key.split('/')[-1])
 
     # print("into nexrad filter function")
@@ -48,14 +48,17 @@ def get_all_geos_file_name_by_filter_new(station, year, day, hour):
     # Log().i(f"User requested the files for, Station: {station}, Year: {year}, Day: {day}, Hour: {hour}")
     # write_goes_log(f"User requested the files for, Station: {station}, Year: {year}, Day: {day}, Hour: {hour}")
     files_available=[]
+    print('here')
 
     day = '{:03d}'.format(int(day))
     hour = '{:02d}'.format(int(hour))
     
-    for object_summary in src_bucket_noaa.objects.filter(Prefix=  f'{station}/{year}/{day}/{hour}/'):
+    for object_summary in src_bucket_goes.objects.filter(Prefix=  f'{station}/{year}/{day}/{hour}/'):
         file_name = object_summary.key.split('/')[-1]
         files_available.append(file_name)
+        print(file_name)
 
+    
     # write_goes_log(f"File fetched: \n{files_available}")
 
     # print("into main get_all_geos_file_name_by_filter")
@@ -173,7 +176,6 @@ def aws_extract_data_to_sqlite():
     month = '{:02d}'.format(now.timetuple().tm_mon)
     year = '{:04d}'.format(now.timetuple().tm_year)
     hour = '{:02d}'.format(now.timetuple().tm_hour)
-    print(date, month, year, hour, day_of_year)
 
     # print('Fetching current date and time ',day, year, hour)
 
@@ -185,8 +187,8 @@ def aws_extract_data_to_sqlite():
     metadata_instance.create_table_goes()
 
     # goes_files_available_list = s3_package.get_all_geos_file_name_by_filter_new(station_goes, year, day_of_year, hour)
-
-    print(year, day_of_year, hour)
+    print('todays', date, month, year, hour, day_of_year)
+    # print('Queried', year, day_of_year, hour)
     goes_files_available_list = get_all_geos_file_name_by_filter_new(station_goes, year, day_of_year, hour)
 
     try:
