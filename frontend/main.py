@@ -1,13 +1,10 @@
 import streamlit as st
-import goes_ui as gu
-import nexrad_ui as nu
-import nexrad_map as nm
 import datetime
 import re
 from datetime import date
-from awscloud.s3 import main as s3
-from awscloud.s3 import nexrad_main as nexs3
-from utils.logger import Log
+from backend.awscloud.s3 import main as s3
+from backend.awscloud.s3 import nexrad_main as nexs3
+# from utils.logger import Log
 
 ## Library Imports
 import pandas as pd
@@ -38,21 +35,7 @@ station_id = sd['ICAO'].astype(str).to_list()
 
 def goes_ui():
    
-    # # Check if 'key' already exists in session_state
-    # # If not, then initialize it
-    # if 'key' not in st.session_state:
-    #     st.session_state['key'] = 'value'
 
-    # # Session State also supports the attribute based syntax
-    # if 'key' not in st.session_state:
-    #     st.session_state.key = 'value'
-
-    # # Store the initial value of widgets in session state
-    # if "visibility" not in st.session_state:
-    #     st.session_state.visibility = "visible"
-    #     st.session_state.disabled = False
-
-    # st.title('This is a title')
     st.title('Search By _File_ : :blue[GOES] Data')
     st.sidebar.markdown("# :blue[GOES] Search")
     st.subheader("Please select your Search Criteria")
@@ -82,9 +65,9 @@ def goes_ui():
     day_goes = d.day
     month_goes = d.month
     year_goes = d.year
-    Log().i(day_goes)
-    Log().i(month_goes)
-    Log().i(year_goes)
+    # Log().i(day_goes)
+    # Log().i(month_goes)
+    # Log().i(year_goes)
 
     # print('day' + ':'+ str(day_goes))
     # print('month' + ':'+ str(month_goes))
@@ -108,7 +91,7 @@ def goes_ui():
         st.write('')
     
     sl_file = st.selectbox('Select the required file for Link',output_files)
-    Log().i(sl_file)
+    # Log().i(sl_file)
     ## Button code :
 
     # if st.button('Search',key = 'goes_file_output'):
@@ -141,7 +124,7 @@ def goes_ui():
     # Text input :
 
     file_input = st.text_input('File Name','' )
-    Log().i(file_input)
+    # Log().i(file_input)
 
     ## Button code :
     regex = re.compile(r'(OR)_(ABI)-(L\d+b)-(Rad[A-Z]?)-([A-Z]\dC\d{2})_(G\d+)_(s\d{14})_(e\d{14})_(c\d{14}).nc')
@@ -152,7 +135,7 @@ def goes_ui():
             file_name = s3.get_aws_link_by_filename(file_input)
             # print(file_name)
             if(file_name == None):
-                st.markdown('**:red[File do not exists in Bucker]**')
+                st.markdown('**:red[File do not exists in Bucket]**')
             else:
                 st.write(file_name)
         else:
@@ -212,14 +195,14 @@ def nexrad_ui():
     # print('day' + ':'+ str(day_nexrad))
     # print('month' + ':'+ str(month_nexrad))
     # print('year'+str(year_nexrad))
-    Log().i(day_nexrad)
-    Log().i(month_nexrad)
-    Log().i(year_nexrad)
+    # Log().i(day_nexrad)
+    # Log().i(month_nexrad)
+    # Log().i(year_nexrad)
 
     station = st.selectbox(
         'Select the required Station',
         station_id)
-    Log().i(station)
+    # Log().i(station)
 
     st.write('You selected:', station)
     # print(str(station))
@@ -231,7 +214,7 @@ def nexrad_ui():
         st.write('')
     # print(output_files)
     sl_file = st.selectbox('Select the required file for Link',output_files)
-    Log().i(sl_file)
+    # Log().i(sl_file)
     ## Button code :
 
     if st.button('Generate Link', key ='nexrad_filed_search'):
@@ -264,7 +247,7 @@ def nexrad_ui():
     match = regex.match(file_input)
     if st.button('Generate the link',key = 'nexrad_file_search'):
         if match:
-            Log().i("yes checked")
+            # Log().i("yes checked")
             file_name = nexs3.get_nexrad_aws_link_by_filename(file_input)
             if file_name == None:
                 st.markdown('**:red[File not found in Database]**')
@@ -281,17 +264,22 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
-from data import Map_data_table_creation as ck
+# from data import Map_data_table_creation as ck
 # st.title('This is a title')
 
 def nexrad_map():
     st.markdown("# NexRad Map")
     st.sidebar.markdown("# NexRad Map")
     ### Call the function to pull Map data : 
-    conn, cursor = ck.map_data_tbl()
+    # conn, cursor = ck.map_data_tbl()
 
-    df = pd.read_sql_query("SELECT * from Mapdata", conn) 
-    data = df
+    # df = pd.read_sql_query("SELECT * from Mapdata", conn) 
+    data = pd.read_fwf('https://www.ncei.noaa.gov/access/homr/file/nexrad-stations.txt')
+    lowercase = lambda x: str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    data = data.drop(index = 0,axis = 0)
+    st.subheader("Req data :")
+    df = data
     st.subheader("Req data :")
     st.write(df) 
 
@@ -337,9 +325,10 @@ def nexrad_map():
 
 
 page_names_to_funcs = {
-    "GOES Search": goes_ui,
-    "NexRad Search": nexrad_ui,
-    "NexRad Map": nexrad_map,
+    # "GOES Search": goes_ui,
+    # "NexRad Search": nexrad_ui,
+    # "NexRad Map": nexrad_map,
+    # "Login Page": login,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
