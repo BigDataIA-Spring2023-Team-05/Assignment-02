@@ -47,7 +47,7 @@ if st.session_state["authentication_status"] == False:
         url = 'http://127.0.0.1:8000/user/login'
         myobj = {'username': username ,'password': password }
         x_status = requests.post(url, data = myobj).status_code
-        print(x_status)
+        # print(x_status)
         st.write(x_status)
         if x_status == 200:
             x = requests.post(url, data = myobj).json()    
@@ -56,8 +56,8 @@ if st.session_state["authentication_status"] == False:
             log_token = x['access_token']
             # goes_ui.goes_ui()
 
-            print(log_username)
-            print(log_token)
+            # print(log_username)
+            # print(log_token)
         # Initialization of session state:
         
             st.session_state["authentication_status"] = log_token

@@ -62,7 +62,8 @@ def goes_ui():
     ## Creating date of the year:
 
     doy = day_of_year(month_goes,day_goes)
-    # print('day of year' + ':'+ str(doy))
+    print(doy)
+    print('day of year' + ':'+ str(doy))
     hour = st.selectbox(
         'Select the required Hour',
         hours_list)
@@ -75,8 +76,10 @@ def goes_ui():
     ## GET API CALL
     token = st.session_state["authentication_status"]
     headers = {'Authorization': f'Bearer {token}'}
-    payload = {'station':'ABI-L1b-RadC','day':str(doy),'year':str(year_goes),'hour':str(hour)}
-    output_files = requests.get("http://127.0.0.1:8000/goes/files", params = payload, headers=headers)
+    payload = {'station':'ABI-L1b-RadC','day':doy,'year':year_goes,'hour':hour}
+    output = requests.get("http://127.0.0.1:8000/goes/files", params = payload, headers=headers).json()
+    # print(output)
+    output_files = output['all_files']
 
     # print(output_files)
 
@@ -98,19 +101,26 @@ def goes_ui():
     # sl_file = st.selectbox('Select the required file for Link',fo1)
     if st.button('Generate Link', key ='goes_filed_search'):
         ### GOES API POST CALL
+        token = st.session_state["authentication_status"]
+        headers = {'Authorization': f'Bearer {token}'}
         url = 'http://127.0.0.1:8000/goes/generate/aws-link'
-        myobj = {'station': 'ABI-L1b-RadC' ,'year': str(year_goes) ,'day': str(day_goes),'hour':hour,'file_name': str(sl_file)}
-        goes_status = requests.post(url, data = myobj).status_code
+        myobj = {'station': 'ABI-L1b-RadC' ,'year': year_goes ,'day': doy,'hour':hour,'file_name': str(sl_file)}
+        # print(myobj)
+        goes_status = requests.post(url, json= myobj,headers=headers).status_code
+        print(goes_status)
         if goes_status == 201:
-            x = requests.post(url, data = myobj).json()    
             st.success("fetched file url")
+            x = requests.post(url, json = myobj, headers=headers).json()    
+            print(x)
             team_link = x['team_link']
             goes_link = x['goes_link']
         # team_link, goes_link = s3.get_geos_aws_link(station,str(year_goes),str(doy), str(hour),str(sl_file))
-        st.write('Our Link')
-        st.write(team_link)
-        st.write('GOES Link')
-        st.write(goes_link)
+            st.write('Our Link')
+            st.write(team_link)
+            st.write('GOES Link')
+            st.write(goes_link)
+        elif goes_status == 401 or goes_status == 404:
+            st.write("Input is Invalid")
         # o_df = pd.DataFrame(data = file_output, columns = ['File Name'])
         # l = []
         # for f in file_output:
@@ -139,14 +149,19 @@ def goes_ui():
         if match:
             # print("yes checked")
             # file_name = s3.get_aws_link_by_filename(file_input)
-            file_name = 'www.link.com'
-            # print(file_name)
-            if(file_name == None):
-                st.markdown('**:red[File do not exists in Bucker]**')
-            else:
+            token = st.session_state["authentication_status"]
+            headers = {'Authorization': f'Bearer {token}'}
+            result_status = requests.post(f"http://127.0.0.1:8000/goes/generate/aws-link-by-filename/{file_input}",headers = headers).status_code
+            if result_status == 201:
+            
+                result = requests.post(f"http://127.0.0.1:8000/goes/generate/aws-link-by-filename/{file_input}",headers = headers).json()
+                file_name = result['bucket_link']
                 st.write(file_name)
-        else:
-           st.markdown('**:red[Input file not supported]**') 
+            elif result_status!= 201:
+                st.markdown('**:red[Input file does not exist]**') 
+        elif not match:
+            st.markdown('**:red[Input format not supported]**')
+
     else:
         st.write(' ')
 

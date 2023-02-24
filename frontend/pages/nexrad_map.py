@@ -3,6 +3,14 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
+import pandas as pd
+import numpy as mp
+import streamlit as st
+import datetime
+import streamlit as st
+from datetime import date
+import requests
+import re
 # from data import Map_data_table_creation as ck
 
 # st.title('This is a title')
@@ -14,14 +22,21 @@ def nexrad_map():
     # conn, cursor = ck.map_data_tbl()
 
     # df = pd.read_sql_query("SELECT * from Mapdata", conn) 
-    data = pd.read_fwf('https://www.ncei.noaa.gov/access/homr/file/nexrad-stations.txt')
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data = data.drop(index = 0,axis = 0)
-    st.subheader("Req data :")
-    df = data 
-    st.write(df) 
+    # data = pd.read_fwf('https://www.ncei.noaa.gov/access/homr/file/nexrad-stations.txt')
 
+    # lowercase = lambda x: str(x).lower()
+    # data.rename(lowercase, axis='columns', inplace=True)
+    # data = data.drop(index = 0,axis = 0)
+    # st.subheader("Req data :")
+    # df = data 
+    # st.write(df)
+    token = st.session_state["authentication_status"]
+    headers = {'Authorization': f'Bearer {token}'}
+    # payload = {'stationId':str(station),'day': day_nexrad,'year':year_nexrad,'month':month_nexrad}
+    result = requests.get("http://127.0.0.1:8000/nexrad/map-data", headers=headers).json()
+    df = pd.DataFrame(data = result)
+    # print(df)
+    st.write(df)
     st.subheader("Graph")
     fig = go.Figure(data=go.Scattergeo(
             locationmode = 'USA-states',

@@ -22,6 +22,8 @@ hours_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", 
 sd = pd.read_fwf('https://www.ncei.noaa.gov/access/homr/file/nexrad-stations.txt')
 sd = sd.drop(index = 0,axis = 0)
 station_id = sd['ICAO'].astype(str).to_list()
+
+
 def nexrad_ui():
 
     # Check if 'key' already exists in session_state
@@ -70,8 +72,11 @@ def nexrad_ui():
     ## API 'GET' CALL
     token = st.session_state["authentication_status"]
     headers = {'Authorization': f'Bearer {token}'}
-    payload = {'station':str(station),'day': str(day_nexrad),'year':str(year_nexrad),'month':str(month_nexrad)}
-    output_files = requests.get("http://127.0.0.1:8000/nexrad/files", params = payload, headers=headers)
+    payload = {'stationId':str(station),'day': day_nexrad,'year':year_nexrad,'month':month_nexrad}
+    stcheck = requests.get("http://127.0.0.1:8000/nexrad/files", params = payload, headers=headers)
+    output =  stcheck.json()
+    # print(output)
+    output_files = output['all_files']
     # output_files = nexs3.get_all_nexrad_file_name_by_filter(str(year_nexrad),str(month_nexrad), str(day_nexrad),str(station))
     # output_files = nexs3.get_all_nexrad_file_name_by_filter('2023', '02', '04', 'KABR')
     if not output_files:
@@ -85,19 +90,24 @@ def nexrad_ui():
 
     if st.button('Generate Link', key ='nexrad_filed_search'):
         ### API 'POST' CALL
+        token = st.session_state["authentication_status"]
+        headers = {'Authorization': f'Bearer {token}'}
         url = 'http://127.0.0.1:8000/nexrad/generate/aws-link'
-        myobj = {'station': str(station) ,'year': str(year_nexrad) ,'day': str(day_nexrad),'month': str(month_nexrad),'file_name': str(sl_file)}
-        nexrad_status = requests.post(url, data = myobj).status_code
+        myobj = {'station_id': str(station) ,'year': year_nexrad ,'day': day_nexrad,'month': month_nexrad,'file_name': str(sl_file)}
+        nexrad_status = requests.post(url, json = myobj,headers = headers).status_code
         if nexrad_status == 201:
-            x = requests.post(url, data = myobj).json()    
             st.success("fetched file url")
+            x = requests.post(url, json = myobj, headers=headers).json()    
+            print(x)
             team_link = x['team_link']
-            nexrad_link = x['goes_link']
+            nexrad_link = x['nexrad_link']
         # team_link, goes_link = s3.get_geos_aws_link(station,str(year_goes),str(doy), str(hour),str(sl_file))
-        st.write('Our Link')
-        st.write(team_link)
-        st.write('GOES Link')
-        st.write(nexrad_link)
+            st.write('Our Link')
+            st.write(team_link)
+            st.write('NexRad Link')
+            st.write(nexrad_link)
+        elif nexrad_status == 401 or nexrad_status == 404:
+            st.write("Input is Invalid")
     else:
         st.write(' ')
 
@@ -109,21 +119,33 @@ def nexrad_ui():
     file_input = st.text_input('File Name','' )
 
 
-    if file_input:
-            st.write("File name entered: ", file_input)
+ ## Button code :
+    regex = re.compile(r'K[A-Z]{3}[0-9]{8}_[0-9]{6}(_V06_MDM)?')
+    match = regex.match(file_input)
+    if st.button('Generate the link',key = 'nexrad_file_search'):
+        if match:
+            # print("yes checked")
+            # file_name = s3.get_aws_link_by_filename(file_input)
+            token = st.session_state["authentication_status"]
+            headers = {'Authorization': f'Bearer {token}'}
+            result_status = requests.post(f"http://127.0.0.1:8000/nexrad/generate/aws-link-by-filename/{file_input}",headers = headers).status_code
+            if result_status == 201:
+            
+                result = requests.post(f"http://127.0.0.1:8000/nexrad/generate/aws-link-by-filename/{file_input}",headers = headers).json()
+                file_name = result['bucket_link']
+                st.write(file_name)
+            elif result_status!= 201:
+                st.markdown('**:red[Input file name does not exist]**') 
+        elif not match:
+            st.markdown('**:red[Input format not supported]**')
+
     else:
-            st.write('')
-
-    ## Button code :
-
-    if st.button('Search'):
         st.write(' ')
-    else:
-        st.write('Enter your file name again')
+
 
 if "authentication_status" not in st.session_state:
    st.session_state["authentication_status"] = False
 if st.session_state["authentication_status"] == False:
       st.subheader("Please Login before use")
 else:
-      nexrad_ui()
+    nexrad_ui()
