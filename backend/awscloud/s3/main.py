@@ -58,22 +58,24 @@ def get_geos_aws_link(station, year, day, hour, filename):
         'Bucket': goes_source_bucket,
         'Key': f'{station}/{year}/{day}/{hour}/{filename}'
     }
+    try:
+        target_bucket.copy(copy_source, station + '/' + str(year) + '/' + day +'/' + hour + '/' + filename)
 
-    target_bucket.copy(copy_source, station + '/' + str(year) + '/' + day +'/' + hour + '/' + filename)
+        # metadata = Metadata()
+        # metadata.insert_data_into_goes(station=station, year=year, day=day, hour=hour)
 
-    # metadata = Metadata()
-    # metadata.insert_data_into_goes(station=station, year=year, day=day, hour=hour)
+        generate_link = f'https://damg7245-team-5.s3.amazonaws.com/{station}/{year}/{day}/{hour}/{filename}'
+        source_link = f'https://noaa-goes18.s3.amazonaws.com/{station}/{year}/{day}/{hour}/{filename}'
 
-    generate_link = f'https://damg7245-team-5.s3.amazonaws.com/{station}/{year}/{day}/{hour}/{filename}'
-    source_link = f'https://noaa-goes18.s3.amazonaws.com/{station}/{year}/{day}/{hour}/{filename}'
+        write_goes_log(f"File requested: {filename}\nGenerate link: {generate_link}\nSource link: {source_link}")
+        
+        Log().i(f'File requested: {filename}')
+        Log().i(f'Generate link: {generate_link}')
+        Log().i(f'Source link: {source_link}')
 
-    write_goes_log(f"File requested: {filename}\nGenerate link: {generate_link}\nSource link: {source_link}")
-    
-    Log().i(f'File requested: {filename}')
-    Log().i(f'Generate link: {generate_link}')
-    Log().i(f'Source link: {source_link}')
-
-    return generate_link, source_link
+        return generate_link, source_link
+    except:
+        return None
 
 
 def get_aws_link_by_filename(filename):
