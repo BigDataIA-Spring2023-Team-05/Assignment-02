@@ -59,9 +59,6 @@ x-airflow-common:
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-    # AWS_ACCESS_KEY: 'AKIAY5JK22NE3ODBWVAW'
-    # AWS_ACCESS_KEY_SECRET: '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'
-    # TARGET_BUCKET_NAME: 'damg7245-team-5'
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
