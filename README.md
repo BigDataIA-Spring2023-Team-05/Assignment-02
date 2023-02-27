@@ -81,4 +81,8 @@ ER Diagram for the SQL database tables - GOES metadata and NEXRAD metadata - whi
 `streamlit run ui/main.py`
 
 ## Streamlit Application link:
-http://ec2-54-165-83-208.compute-1.amazonaws.com:8501/
+http://ec2-3-223-141-28.compute-1.amazonaws.com:8501
+
+
+## FastAPI Application link:
+http://ec2-3-223-141-28.compute-1.amazonaws.com:8000
