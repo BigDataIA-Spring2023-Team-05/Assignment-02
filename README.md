@@ -85,4 +85,4 @@ http://ec2-3-223-141-28.compute-1.amazonaws.com:8501
 
 
 ## FastAPI Application link:
-http://ec2-3-223-141-28.compute-1.amazonaws.com:8000
+http://ec2-3-223-141-28.compute-1.amazonaws.com:8000/docs
